@@ -8,7 +8,7 @@ export async function GET() {
     const message = await client.messages.create({
       model: "claude-sonnet-4-5",
       max_tokens: 400,
-      tools: [{ type: "web_search_20250305" as const, name: "web_search" }],
+      tools: [{ type: "web_search_20250305", name: "web_search" }] as any,
       messages: [{ role: "user", content: `Fetch southendvillageacademy.org and find the current dollar amount raised on the donation counter. Return ONLY this JSON: {"raised": "$XXX,XXX"}` }],
     });
     const text = message.content.filter(b => b.type === "text").map(b => b.type === "text" ? b.text : "").join("");
