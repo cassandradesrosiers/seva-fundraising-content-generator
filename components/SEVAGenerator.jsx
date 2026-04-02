@@ -331,7 +331,7 @@ function QRBlock({ url, size = 88, fgColor = "#1c2535" }) {
   const [err, setErr] = useState(false);
   useEffect(() => {
     let cancelled = false;
-    import("https://esm.sh/qrcode@1.5.3").then(mod => {
+    import("qrcode").then(mod => {
       if (cancelled || !ref.current) return;
       const QR = mod.default || mod;
       QR.toCanvas(ref.current, url, {
@@ -639,7 +639,7 @@ export default function SEVAGenerator() {
     if (!graphicRef.current) return;
     setDownloading(true);
     try {
-      const { default: html2canvas } = await import("https://esm.sh/html2canvas@1.4.1");
+      const { default: html2canvas } = await import("html2canvas");
       const canvas = await html2canvas(graphicRef.current, { scale: 2.5, useCORS: true, allowTaint: true, backgroundColor: null, logging: false });
       const sizeName = { square:"1080x1080", vertical:"1080x1920", letter:"8.5x11" }[graphicSize] || graphicSize;
       const a = document.createElement("a");
