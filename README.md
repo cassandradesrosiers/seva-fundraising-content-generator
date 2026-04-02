@@ -1,7 +1,7 @@
 # SEVA Content Generator
 
 Internal fundraising communications tool for South End Village Academy.
-Generates multi-channel content (email, social, WhatsApp, Slack, graphics) using the SEVA brand voice and approved messaging framework.
+Generates multi-channel content (email, social, WhatsApp, Slack, graphics) using the SEVA brand voice and approved messaging framework. Let's do it!
 
 ---
 
