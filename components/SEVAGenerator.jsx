@@ -592,7 +592,7 @@ export default function SEVAGenerator() {
     setTimeout(() => setCopied(p => ({ ...p, [key]: false })), 2000);
   };
 
-  const callAPI = async (prompt: string, maxTokens: number) => {
+  const callAPI = async (prompt, maxTokens) => {
     const r = await fetch("/api/generate", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
